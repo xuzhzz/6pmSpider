@@ -32,15 +32,15 @@ def get_sku(page):
     return 'well-stocked'
 
 
-def get_sku(url='https://www.6pm.com/p/bandolino-yara-natural-synthetic/product/8599315/color/59416'):
+def get_stock(url='https://www.6pm.com/p/lifestride-spark-red/product/8872328/color/585'):
     driver = webdriver.Chrome()
     # driver = webdriver.PhantomJS(desired_capabilities=dcap, service_args=service_args)
-    # driver = webdriver.PhantomJS(desired_capabilities=cap)
+    # driver = webdriver.PhantomJS()
     # wait = WebDriverWait(driver, 10)
     # url = 'https://www.6pm.com/p/lifestride-spark-red/product/8872328/color/585'
     # url = 'https://www.6pm.com/p/bandolino-yara-natural-synthetic/product/8599315/color/59416'
-    driver.set_page_load_timeout(10)
-    driver.set_script_timeout(10)
+    driver.set_page_load_timeout(30)
+    driver.set_script_timeout(30)
     try:
         driver.get(url)
     except TimeoutException:
@@ -110,3 +110,7 @@ def get_sku(url='https://www.6pm.com/p/bandolino-yara-natural-synthetic/product/
 
     driver.close()
     return res
+
+
+if __name__ == '__main__':
+    print(get_stock())

@@ -36,4 +36,8 @@
 
 ## 9-21提交 
 1.增加selenuim方式采集库存信息。
-2.但是本地运行效率太低，可以增加多进程的方式进行改进。
+```Python
+from selectnuimspider import get_stock
+get_stock(url)
+```
+2.但是本地运行效率太低，可以增加多进程的方式进行改进。Chrome()驱动时没问题， PhantomJS()驱动时会出错。
